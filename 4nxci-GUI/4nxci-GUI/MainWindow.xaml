@@ -13,7 +13,7 @@
             <ColumnDefinition Width="351*"/>
         </Grid.ColumnDefinitions>
         <Label x:Name="lbl_xci" Content="XCI:" HorizontalAlignment="Left" Margin="82,11,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_xci" HorizontalAlignment="Left" Height="22" Margin="3.618,13,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="519" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <TextBox x:Name="txt_xci" HorizontalAlignment="Left" Height="22" Margin="3.618,13,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="519" Grid.ColumnSpan="2" Grid.Column="1" DragOver="txt_xci_DragOver" Drop="txt_xci_Drop" PreviewDragOver="txt_xci_PreviewDragOver"/>
         <Button x:Name="btn_xci" Content="Browse" HorizontalAlignment="Left" Margin="232.334,13,0,0" VerticalAlignment="Top" Width="102" Height="22" Click="btn_xci_Click" Grid.Column="2"/>
         <Label x:Name="lbl_outdir" Content="Output Directory:" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txt_outdir" HorizontalAlignment="Left" Height="22" Margin="3.618,46,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="519" Grid.ColumnSpan="2" Grid.Column="1"/>

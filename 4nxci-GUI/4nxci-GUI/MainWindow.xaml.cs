@@ -191,9 +191,35 @@ namespace NXCI_GUI
             launch_4nxci(args);
         }
 
-    private void btn_xci_Click(object sender, RoutedEventArgs e)
+        private void btn_xci_Click(object sender, RoutedEventArgs e)
         {
             browse_file(ref txt_xci);
+        }
+
+        private void txt_xci_DragOver(object sender, System.Windows.DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(System.Windows.DataFormats.FileDrop))
+                e.Effects = System.Windows.DragDropEffects.Copy;
+            else
+                e.Effects = System.Windows.DragDropEffects.None;
+        }
+
+        private void txt_xci_Drop(object sender, System.Windows.DragEventArgs e)
+        {
+            string[] files = e.Data.GetData(System.Windows.DataFormats.FileDrop) as string[];
+            if (files != null && files.Length > 0)
+            {
+                txt_xci.Text = files[0];
+                if (txt_outdir.Text == string.Empty)
+                {
+                    txt_outdir.Text = Path.GetDirectoryName(txt_xci.Text);
+                }
+            }
+        }
+
+        private void txt_xci_PreviewDragOver(object sender, System.Windows.DragEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
